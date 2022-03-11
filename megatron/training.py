@@ -102,6 +102,7 @@ def pretrain(neox_args):
     print_rank_0("training ...")
 
     iteration = 0
+    #ALEX: train_data iterator is the data iterator that delivers the batch via next(data_iterator)
     if neox_args.do_train and neox_args.train_iters > 0:
         iteration = train(
             neox_args=neox_args,
@@ -203,7 +204,7 @@ def get_batch_pipe(data, neox_args):
     # unpack data
     return (tokens, position_ids, attention_mask), (labels, loss_mask)
 
-
+#Main forward step
 def forward_step(data_iterator, model, neox_args, timers, return_logits=False):
     """Forward step."""
     if neox_args.is_pipe_parallel:

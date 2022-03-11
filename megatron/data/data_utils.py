@@ -81,6 +81,7 @@ def build_train_valid_test_datasets(
     """Build train, valid, and test datasets."""
 
     # Indexed dataset.
+    #ALEX: indexed dataset reads in json file. Is by default MMap indexed dataset
     indexed_dataset = make_indexed_dataset(data_prefix, data_impl, skip_warmup)
 
     total_num_of_documents = indexed_dataset.sizes.shape[0]
@@ -124,6 +125,7 @@ def build_train_valid_test_datasets(
     valid_dataset = build_dataset(1, "valid")
     test_dataset = build_dataset(2, "test")
 
+    #ALEX: actual dataset returned is a gpt2_dataset
     return train_dataset, valid_dataset, test_dataset
 
 

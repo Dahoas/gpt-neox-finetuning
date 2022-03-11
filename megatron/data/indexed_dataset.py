@@ -335,6 +335,7 @@ def _warmup_mmap_file(path):
             pass
 
 
+#ALEX: Default Indexed dataset class
 class MMapIndexedDataset(torch.utils.data.Dataset):
     class Index(object):
         _HDR_MAGIC = b"MMIDIDX\x00\x00"

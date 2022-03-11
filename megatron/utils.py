@@ -82,6 +82,10 @@ def get_ltor_masks_and_position_ids(
 
     # Extract batch size and sequence length.
     batch_size, seq_length = data.size()
+    #print("batch_size: ", batch_size)
+    #print("seq_length: ", seq_length)
+    ##print(data)
+    #exit()
 
     # Attention mask (lower triangular).
     attention_mask = get_attn_mask(
@@ -89,6 +93,7 @@ def get_ltor_masks_and_position_ids(
         device=data.device,
     )
 
+    #ALEX: This is where they compute loss mask
     # Loss mask.
     loss_mask = torch.ones(data.size(), dtype=torch.float, device=data.device)
     if eod_mask_loss:
