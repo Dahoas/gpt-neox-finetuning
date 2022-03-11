@@ -9,7 +9,7 @@
   "load": "~/slim_weights",
 
   # If finetuning, edit the following to the location of your finetuning dataset:
-  "data-path": "./data/pile_20B_tokenizer/pile_20B_tokenizer_text_document",
+  "data-path": "./data/train_data/passage_crits_text_document",
 
   # parallelism settings ( you will want to change these based on your cluster setup, ideally scheduling pipeline stages
   # across the node boundaries )
